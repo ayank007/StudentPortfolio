@@ -13,6 +13,9 @@
 #navbar ul .contact a i{
     color: red;
 }
+.f{
+	cursor:pointer;
+}
 /*c*/
 	#main{
 		position: absolute;
