@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact Me</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width = device-width, initial scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="./style.css">
+	<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../dist/css/animsition.min.css">
+    <link rel="stylesheet" type="text/css" href="../common/navbar.css">
+    <script src="https://kit.fontawesome.com/a9ba462570.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav id='navbar'>
+        <div class="icon"><i class="fas fa-font"></i></div>
+        <ul>
+            <li class="nav home">
+                <a data-hover='Home' href="../index.html" class="animsition-link" data-animsition-out-class="overlay-slide-out-top" data-animsition-out-duration="2000">
+                    <i class="fas fa-home"></i>
+                </a>
+            </li>
+            <li class="nav about">
+                <a data-hover='About' href="../about/indexd1.html" class="animsition-link" data-animsition-out-class="overlay-slide-out-bottom" data-animsition-out-duration="500">
+                    <i class="fas fa-user"></i>
+                </a>
+            </li>
+            <li class="nav skills">
+                <a data-hover='Skills' href="../skills/index.html" class="animsition-link" data-animsition-out-class="overlay-slide-out-right" data-animsition-out-duration="2000">
+                    <i class="fas fa-code"></i>
+                </a>
+            </li>
+            <li class="nav contact"><a data-hover='Contact'><i class="fas fa-envelope"></i></a></li>
+        </ul>
+        <div class="media">
+            <li><a href="https://www.instagram.com/koley.ayan"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://www.github.com/ayank007"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/ayan-koley-3370a9190"><i class="fab fa-linkedin-in"></i></a></li>   
+        </div>
+    </nav>
+    <main class="animsition-overlay" data-animsition-overlay="true" id="main">
+        <div class="wall"><img src="../images&icons/wall.png"></div>
+        <div class="navmenu">
+            <img src="../images&icons/menu.svg" class="menuopen" onclick="togglenav()">
+            <img src="../images&icons/close.svg" class="menuclose">
+        </div>
+        <div class="header">
+            <div class="a">
+                <h1 class="rubber">Contact Me...</h1>
+            </div>   
+        </div>
+        <div class="container">
+            <div class="info">
+                <li>
+                    <div class="cicon"><img src="../images&icons/email.png"></div>
+                    <div class="crest">
+                        <h1 class="rubber">Email</h1>
+                        <span>ayankoley@gmail.com</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="cicon"><img src="../images&icons/phone.png"></div>
+                    <div class="crest">
+                        <h1 class="rubber">Contact No</h1>
+                        <span>9051971504</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="cicon"><img src="../images&icons/mail.png"></div>
+                    <div class="crest">
+                        <h1 class="rubber">Address</h1>
+                        <span>Vill : Khagragachi (east)</span>
+                        <span>PO : Bajemelia, Singur, Hooghly</span>
+                        <span>WB</span>
+                        <span>Pin : 712407</span>
+                    </div>
+                </li>
+            </div>
+            <div class="massege">
+                <form action="../index.php" method="post">
+                    <div class="option m">
+                        <div class="optionheader"><h1 class="rubber">Reason</h1></div>
+                        <li>
+                            <div class="checklebel"><input type="checkbox" id="one" name="reason[]"><label for='one'></label></div>
+                            <span>Hire Me</span>
+                        </li>
+                        <li>
+                            <div class="checklebel"><input type="checkbox" id="two" name="reason[]"><label for='two'></label></div>
+                            <span>Work Alongside With Me In A Start Up</span>
+                        </li>
+                        <li>
+                            <div class="checklebel"><input type="checkbox" id="three" name="reason[]"><label for='three'></label></div>
+                            <span>Report a bug / Suggest Something</span>
+                        </li>
+                        <li>
+                            <div class="checklebel"><input type="checkbox" id="four" name="reason[]"><label for='four'></label></div>
+                            <span>Want Me To Subscribe Your Youtube Channel</span>
+                        </li>
+                        <li>
+                            <div class="checklebel"><input type="checkbox" id="five" name="reason[]"><label for='five'></label></div>
+                            <span>Others...</span>
+                        </li>
+                    </div>
+                    <div class="mds m">
+                        <div class="ffff">
+                            <div class="name f">
+                                <input required="required" type="text" name="uusername" autocomplete="new-password">
+                                <span>Your Name</span>
+                            </div>
+                            <div class="ccontact f">
+                                <input required="required" autocomplete="new-password" type="text" name="usercontact">
+                                <span>Your Email/Linkdin Profile</span>
+                            </div>
+                            <div class="f">
+                                <textarea required="required" name="mm" autocomplete="new-password"></textarea>
+                                <span>Massege</span>
+                            </div>
+                            
+                        </div>    
+                    </div>
+                    <span class="btns">
+                        <input type="submit" value="Send" class="msgb">
+                        <input type="reset" value="Reset" class="msgb">    
+                    </span>
+                </form>
+            </div>
+        </div>
+    </main>
+    
+    
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <!-- <script src="../jquery.hoverDelay.js"></script> -->
+
+    <!-- <script src="https://unpkg.com/@barba/core"></script> -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="../dist/js/animsition.min.js"></script>
+    <script type="text/javascript" src="../common/script.js"></script>
+    <script type="text/javascript">
+        const t=document.querySelector(".rubber");
+        const text=t.textContent;
+        const letters=text.split("");
+        let html="";
+        const makespan=letter=>`<span class='rubber'>${letter}</span>`;
+        letters.forEach(letter=>(html+=makespan(letter)));
+        t.innerHTML=html;
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,255 @@
+/*nav -> */
+	#navbar{
+		width: 80px;
+		height: 100vh;
+		background-color: #171616;
+		position: fixed;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		z-index: 9999;
+
+		top: 0;
+		left: 0;
+	}
+	#navbar ul{
+		display: block;
+		text-align: center;
+		padding: 0;
+		margin: 0;
+	}
+
+	#navbar ul .nav{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 80px;
+		width: 100%;
+		/*background-color: green;*/
+		transition: ease-in-out;
+	/*	border: 1px white solid;*/
+	}
+
+	#navbar ul .nav a{
+		font-size: 25px;
+		text-decoration: none;
+	}
+	#navbar ul .nav a:hover{
+		font-size: 0;
+	}
+	#navbar ul .nav a:hover:after{
+		content: attr(data-hover);
+		font-size: 18px;
+		position: relative;
+		text-decoration: none;
+		color: yellow;
+	}
+
+
+	.icon{
+		position: relative;
+		margin:0;
+		padding: 0;
+		font-size: 50px;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: #0a0a0a;
+	}
+
+	/*#foo{
+		color:white;
+		background-color: green;
+		font-size: 40px;
+	}
+	#foo:hover{
+		color:black;
+		background-color: red; 
+	}
+	#foo.clicked{
+		background-color: blue;
+	}
+	#foo.clicked:hover{
+		background-color: yellow;
+	}*/
+    .media{
+        padding-bottom: 20px;
+        text-align-last: center;
+        overflow: hidden;
+        zoom: 1;
+        margin-top: 15px;
+    }
+
+    body{
+        line-height: 1.42857143;
+        font-size: 14px;
+        display: block;
+    }
+    :after, :before{
+    	box-sizing: border-box;
+    }
+	
+    .icon i{
+    	color: gray;
+    }
+    .media li a{
+		display: block;
+		padding: 7px;
+		/*font-size: 17px;*/
+		line-height: 16px;
+	} 
+	.media li a i{
+    	color: blue;
+    }
+    .media li{
+    	position: relative;
+    }
+    .media li a::before, .media li a::after{
+		content: '';
+		position: absolute;
+		box-sizing: border-box;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		transition: .4s linear;
+	}
+
+	.media li a:hover{
+		transform: scale(.8);
+	}
+
+	.media li a:hover::before{
+		border-left: 2px solid;
+		border-right: 2px solid;
+		transform: skewX(20deg);
+	}
+
+	.media li a:hover::after{
+		border-top: 2px solid;
+		border-bottom: 2px solid;
+		transform: skewY(-20deg);
+	}
+/*nav*/
+
+*{
+	list-style: none;
+	text-decoration: none;
+	margin: 0 auto;
+	padding: 0 auto;
+	box-sizing: border-box;
+}
+#main{
+	position: absolute;
+}
+main{
+	position: absolute;
+	background-color: #1d1d1d;
+	left: 80px;
+	width: calc(100vw - 80px);
+	height: 100vh;
+	display: flex;
+	flex-flow: column;
+}
+
+.rubber{
+
+	display: inline-block;
+	transition: 0.2s ease-in-out color;
+}/*
+.rubber:hover{
+	display: inline-block;
+	cursor: pointer;
+	animation: rubberBand 1s ease-in-out forwards;
+}*/
+.rubber-band{
+	cursor: pointer;
+	display: inline-block;
+	color: #08fdd8;
+	animation: rubberBand 1s ease-in-out forwards;
+}
+@keyframes rubberBand{
+    0%{
+        transform: scale3d(1,1,1);
+    }
+    30%{
+        transform: scale3d(1.25,.75,1);
+    }
+    40%{
+        transform: scale3d(.75,1.25,1);
+    }
+    50%{
+        transform: scale3d(1.15,0.85,1);
+    }
+    65%{
+        transform: scale3d(0.95,1.05,1);
+    }
+    75%{
+        transform: scale3d(1.05,0.95,1); 
+    }
+    100%{
+        transform: scale3d(1,1,1); 
+    }
+}
+.wall{
+	position: fixed;
+	top: 0;
+	right: 0;
+	margin-right: 0px;
+	z-index: 1000;
+}
+
+.navmenu{
+	width: 32px;
+	height: 32px;
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	display: flex;
+	padding: 0;
+	margin: 0;
+	display: none;
+	/*background-color: red;*/
+}
+.navmenu img{
+	position: absolute;
+	width: 90%;
+	height: 90%;
+	object-fit: cover;
+	z-index: 10000000;
+}
+
+@media(max-width: 700px){
+	#main{
+		width: 100%;
+		left: 0;
+	}
+	#navbar{
+		transform: translateX(-100%);
+		/*left: 20px !important;*/
+		transition: 1s linear;
+	}
+	.navmenu{
+		transform: translateX(0);
+		display: block;
+		z-index: 1000;
+		transition: 1s linear;
+	}
+	.navmenu .menuclose{
+		display: none;
+	}
+
+	#navbar.active{
+		transform: translateX(0);
+		/*left: 50px !important;*/
+	}
+	.navmenu.active{
+		transform: translateX(80px);
+	}
+}

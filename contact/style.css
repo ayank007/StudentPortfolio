@@ -1,0 +1,344 @@
+
+*{
+	list-style: none;
+	padding: 0 auto;
+	margin:0 auto;
+	text-decoration: none;
+	box-sizing: border-box;
+}
+
+#navbar ul .nav a i{
+    color:#337ab7;
+}
+#navbar ul .contact a i{
+    color: red;
+}
+/*c*/
+	#main{
+		position: absolute;
+	}
+	main{
+		position: absolute;
+		background-color: #1d1d1d;
+		left: 80px;
+		width: calc(100vw - 80px);
+		height: 100vh;
+		display: flex;
+		flex-flow: column;
+	}
+	.container::before{
+		position: absolute;
+		width: 60%;
+		height: 100%;
+		transform: skew(45deg);
+		background-color: gray;
+	}
+	.header{
+		position: relative;
+		height: 120px;
+		width: 100%;
+	}
+	.container{
+		position: relative;
+		width: 100%;
+		height: 100%;
+		display: flex;
+	}
+	.info{
+		display: flex;
+		flex-flow: column;
+		width: 50%;
+		margin-top: 40px;
+	}
+	.info li{
+		/*margin-top: 40px;*/
+		position: relative;
+		display: flex;
+		width: 60%;
+		height: 150px;
+	}
+	.info li .cicon{
+		position: relative;
+		height: 70px;
+		width: 70px;
+		left: 0;
+		top: 0;
+		transform: translateY(25px);
+	}
+	.info li .cicon img{
+		position: absolute;
+		height: 60px;
+		width: 60px;
+		object-fit: cover;
+	}
+	.info li .crest{
+		position: relative;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+		display: flex;
+		flex-flow: column;
+		/*justify-content: center;*/
+		align-items: center;
+		margin-left: 15px;
+	}
+	.info li .crest h1{
+		color:#08fdd8;
+	}
+	.info li .crest span{
+		color:white;
+		/*font-weight: bold;*/
+		font-size: 20px;
+	} 
+/*c*/
+
+/*c*/
+	.massege .m{
+		height: 50%;
+		width: 100%;
+		position: relative;
+	}
+	.massege .mds .ffff .f{
+		position: relative!important;
+		height: 30px!important;
+		width: 100%!important;
+		left: 0!important;
+		margin-top: 20px!important;
+	}
+	.massege .mds .ffff .f input, .massege .mds .ffff .f textarea{
+		position: absolute!important;
+		z-index: 2!important;
+		width: 70%!important;
+		outline: none!important;
+		background: none!important;
+		border: none!important;
+		border-bottom: solid 1px #08fdd8!important;
+		resize: none!important;
+		color: white!important;
+		font-size: 18px!important;
+	}
+	.massege .mds .ffff .f:nth-child(3){
+		height: 110px!important;
+	}
+	.massege .mds .ffff .f:nth-child(3) textarea{
+		height: 105px!important;
+	}
+	.massege .mds .ffff .f span{
+		position: absolute!important;
+		z-index: 1!important;
+		font-size: 20px!important;
+		color: #515152!important;
+		font-weight: bold!important;
+		transform: translateY(-5px)!important;
+		transition: 0.6s!important;
+	}
+	.massege .mds .ffff .f input:focus ~ span, .massege .mds .ffff .f input:valid ~ span, .massege .mds .ffff .f textarea:valid ~ span, .massege .mds .ffff .f textarea:focus ~ span{
+		top: 0!important;
+		left: 0!important;
+		transform: scale(0.7) translateY(-35px) translateX(-22%)!important;
+		color: #08fdd8!important;
+	}
+	.msgb{
+		width: 200px;
+		height: 50px;
+		font-weight: bold;
+		background-color: transparent;
+		border : 2px solid #08fdd8;
+		display: flex;
+		font-size: 20px;
+		margin-right: 15px;
+		align-items: center;
+		justify-content: center;
+		color: #08fdd8;
+	}
+	.msgb:hover{
+		background-color: #08fdd8;
+		color: black;
+	}
+	.btns{
+		position: relative;
+		width: 100%;
+		display: flex;
+		transform: translateY(20px);
+	}
+
+/*c*/
+
+/*d*/
+	.info,.massege{
+		position: relative; 
+		left: 0;
+		width: 100%;
+		height: calc(100% - 40px);
+	}
+	input[type='checkbox']{
+		display: none;
+	}
+	input[type='checkbox'] + label{
+		position: absolute;
+		cursor: pointer;
+		transition: 0.3s;
+		z-index: 2;
+		height: 20px;
+		width: 20px;
+		border: 4px solid #444;
+		transform: translateY(5px);
+		top: 0;
+		left: 0;
+	}
+	.option{
+		position: relative;
+		top: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-flow: column;
+		left: 0;
+	}
+	.option .optionheader{
+		position: relative;
+		width: 100%;
+	}
+	.option h1{
+		/*position: relative;*/
+		color:#08fdd8;
+		/*width: 100%;*/
+	}
+	.option li{
+		position: relative;
+		display: inline-block;
+		width: 100%;
+		height: 50px;
+	}
+	.option span{
+		margin-left: 40px;
+		width: 100%;
+		height: 100%;
+		color: #337ab7;
+		font-size: 20px;
+	}
+	.checklebel{
+		position: absolute;
+		width: 50px;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	input[type='checkbox']:checked + label{
+		transition: 0.3s;
+		height: 20px;
+		width: 20px;
+		border-top-color: transparent;
+		border-left-color: transparent;
+		border-right-color: transparent;
+		border-bottom-color: yellow;
+		transform: rotate(-50deg) translateY(-4px) translateX(4px);
+	}
+	input[type='checkbox']:checked + label:before{
+		content: "";
+		position: absolute;
+		right: 0;
+		/*left: 1;*/
+		/*top: -1px;*/
+		/*bottom: -3px;*/
+		height: 15px;
+		width: 20px;
+		border-left: 4px solid yellow; 
+	}
+	.t{
+		margin-right: 10px; 
+		width: 240px;
+		background-color: red;
+	}
+/*d*/
+
+.header .a{
+	width: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 80px;
+}
+.header .a h1{
+	width: 12ch;
+	font-size: 50px;
+	font-weight: bolder;
+	animation: type 3s steps(12);
+	animation-delay: 0.8s;
+	overflow: hidden;
+	white-space: nowrap;
+	color: #08fdd8;
+	/*transition: all 3s ease-in-out;*/
+}
+@keyframes type{
+	0%{
+		width: 0ch;
+	}
+	100%{
+		width: 12ch;
+	}
+}
+
+
+@media(max-width: 700px){
+	#main{
+		overflow-x: hidden;
+	}
+	.container{
+		height: auto;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-flow: column;
+	}
+	.header{
+		transform: translateY(30px);
+	}
+	.info, .massege{
+		position: relative;
+		width: 100%;
+		height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-flow: column;
+	}
+	#header a h1{
+		font-size: 40px;
+	}
+	.info li{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-flow: column;
+		margin-bottom: 60px;
+	}
+	.info li .cicon{
+		transform: translateY(-20px);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.info li .crest{
+		margin: 0;
+		padding: 0;
+	}
+	.massege .m .optionheader{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.massege .option li{
+		margin-top: 20px;
+	}
+	.mds .ffff{
+		height: auto;
+		width: 100%;
+		/*display: flex;*/
+		/*align-items: center;*/
+		/*justify-content: flex-start;*/
+	}
+}
