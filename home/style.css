@@ -1,0 +1,171 @@
+body{
+	padding: auto 0;
+	margin: auto 0;
+}
+*{
+	list-style: none;
+	text-decoration: none;
+	box-sizing: border-box;
+}
+#navbar ul .nav a i{
+    color:#337ab7;
+}
+#navbar ul .home a i{
+    color: red;
+}
+
+#main{
+
+	background-color: #3c434b;
+}
+.container{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.content, .mainicon{
+	position: relative;
+	width: 50%;
+	height: 100%;
+	overflow: hidden;
+	display: flex;
+	/*align-items: center;*/
+	justify-content: center;
+	flex-flow: column;
+}
+.imgbox{
+	position: absolute;
+	object-fit: cover;
+}
+.content h1{
+	width: auto;
+	position: relative;
+	margin-left: 80px;
+	font-size: 60px;
+	color: #fff;
+	font-weight: bolder;
+}
+.content h1 span:hover{
+	color: #08fdd8;
+}
+.ccontact a{
+	width: 150px;
+	height: 70px;
+	font-size: 20px;
+	border: 1px solid #08fdd8;
+	color: #08fdd8;
+	font-weight: bold;
+}
+.ccontact a:hover{
+	background-color: #08fdd8;
+	color: black;
+	text-decoration: none;
+}
+.content div{
+	width: auto;
+	height: 70px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/*left: 50px;*/
+	/*padding: 0;*/
+	margin-left: 80px;
+	margin-top: 20px;
+}
+.content div a, .content div h2{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.content h2{
+	color: black;
+	font-size: 20px;
+}
+.container::before{
+	content: '<html>';
+	position: absolute;
+	left: 20px;
+	top: 20px;
+	color: #000;
+	font-style: italic;
+}
+.container::after{
+	content: '</html>';
+	position: absolute;
+	left: 20px;
+	bottom: 20px;
+	color: #080808;
+	font-style: italic;
+}
+.content::before{
+	content: '<body>';
+	position: absolute;
+	left: 25px;
+	top: 38px;
+	color: #080808;
+	font-style: italic;
+}
+.content::after{
+	content: '</body>';
+	position: absolute;
+	left: 25px;
+	bottom: 38px;
+	color: #080808;
+	font-style: italic;
+}
+.content h1::before{
+	content: '<h1>';
+	position: absolute;
+	font-size: 16px;
+	font-weight: normal;
+	left: -10px;
+	top: -18px;
+	color: #080808;
+	font-style: italic;
+}
+.content h1::after{
+	content: '</h1>';
+	position: absolute;
+	left: -10px;
+	font-weight: normal;
+	font-size: 16px;
+	bottom: -20px;
+	color: #080808;
+	font-style: italic;
+}
+
+@media(max-width: 700px){
+	.content span{
+		font-size: 40px;
+		z-index: 10;
+	}
+	
+	#main{
+		width: 100%;
+		height: 100%;
+		padding: 0;
+		margin: 0;
+		left: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.container::before, .container::after{
+		left: 150px;
+		display: none;
+	}
+	.content{
+		width: 100%;
+	}
+	.mainicon{
+		display: none;
+	}
+
+}
+.txt-type .txt {
+  border-right: 0.2rem solid #777;
+}
