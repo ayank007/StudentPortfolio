@@ -119,7 +119,9 @@
                         </div>    
                     </div>
                     <span class="btns">
-                        <input type="submit" value="Send" class="msgb">
+                        <input type="button" value="Send" class="msgb" data-toggle="tooltip" 
+                        data-placement="left" title="I am currently unable to get your message, 
+                        please mail me or directly contact me in Linkedin, Thank you">
                         <input type="reset" value="Reset" class="msgb">    
                     </span>
                 </form>
@@ -136,6 +138,8 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="../dist/js/animsition.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../common/script.js"></script>
     <script type="text/javascript">
         const t=document.querySelector(".rubber");
@@ -145,6 +149,9 @@
         const makespan=letter=>`<span class='rubber'>${letter}</span>`;
         letters.forEach(letter=>(html+=makespan(letter)));
         t.innerHTML=html;
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();   
+        });
     </script>
     
 </body>
