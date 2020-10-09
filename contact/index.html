@@ -77,52 +77,55 @@
                 </li>
             </div>
             <div class="massege">
-                <form action="https://ayank007portfoliobe.herokuapp.com/create" method="POST" autocomplete="off">
+                <form name="myform" method="POST" autocomplete="off">
                     <div class="option m">
                         <div class="optionheader"><h1 class="rubber">Reason</h1></div>
                         <li>
-                            <div class="checklebel"><input type="checkbox" id="one" name="reason[]"><label for='one'></label></div>
+                            <div class="checklebel"><input type="checkbox" id="one" name="reason1"><label for='one'></label></div>
                             <span>Hire Me</span>
                         </li>
                         <li>
-                            <div class="checklebel"><input type="checkbox" id="two" name="reason[]"><label for='two'></label></div>
+                            <div class="checklebel"><input type="checkbox" id="two" name="reason2"><label for='two'></label></div>
                             <span>Work Alongside With Me In A Start Up</span>
                         </li>
                         <li>
-                            <div class="checklebel"><input type="checkbox" id="three" name="reason[]"><label for='three'></label></div>
+                            <div class="checklebel"><input type="checkbox" id="three" name="reason3"><label for='three'></label></div>
                             <span>Report a bug / Suggest Something</span>
                         </li>
                         <li>
-                            <div class="checklebel"><input type="checkbox" id="four" name="reason[]"><label for='four'></label></div>
+                            <div class="checklebel"><input type="checkbox" id="four" name="reason4"><label for='four'></label></div>
                             <span>Want Me To Subscribe Your Youtube Channel</span>
                         </li>
                         <li>
-                            <div class="checklebel"><input type="checkbox" id="five" name="reason[]"><label for='five'></label></div>
+                            <div class="checklebel"><input type="checkbox" id="five" name="reason5"><label for='five'></label></div>
                             <span>Others...</span>
                         </li>
                     </div>
                     <div class="mds m">
                         <div class="ffff">
                             <div class="name f">
-                                <input required="required" type="text" name="uusername" autocomplete="off">
+                                <input required="required" type="text" name="Name" autocomplete="off" onchange="hello1();">
                                 <span>Your Name</span>
                             </div>
                             <div class="ccontact f">
-                                <input required="required" autocomplete="off" type="text" name="usercontact">
+                                <input required="required" autocomplete="off" type="text" name="Contact">
                                 <span>Your Email/Linkdin Profile</span>
                             </div>
                             <div class="f">
-                                <textarea required="required" name="mm" autocomplete="off"></textarea>
+                                <textarea required="required" name="Message" autocomplete="off"></textarea>
                                 <span>Massege</span>
                             </div>
-                            
+                            <input type="text" placeholder="hi" id="hii" name="Reasons" style="display: none;">
+                            <input type="text" placeholder="hi" id="hii2" name="Date" style="display: none;">                            
                         </div>    
                     </div>
                     <span class="btns">
-                        <input type="button" value="Send" class="msgb" data-toggle="tooltip" 
+                        <input type="submit" value="Send" class="msgb">
+                         <!-- data-toggle="tooltip" 
                         data-placement="left" title="I am currently unable to get your message, 
-                        please mail me or directly contact me in Linkedin, Thank you">
-                        <input type="reset" value="Reset" class="msgb">    
+                        please mail me or directly contact me in Linkedin, Thank you"> -->
+                        <input type="reset" value="Reset" class="msgb">
+                        <!-- <button type="button" value="hii" onclick="hello1();"></button> -->
                     </span>
                 </form>
             </div>
@@ -142,6 +145,37 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../common/script.js"></script>
     <script type="text/javascript">
+        function hello1(){
+            var one=document.getElementById('one');
+            var two=document.getElementById('two');
+            var three=document.getElementById('three');
+            var four=document.getElementById('four');
+            var five=document.getElementById('five');
+            let rsnarr=[];
+            if(one.checked==true){
+                rsnarr.push('hire');
+            }
+            if(two.checked==true){
+                rsnarr.push('start up');
+            }
+            if(three.checked==true){
+                rsnarr.push('suggestion');
+            }
+            if(four.checked==true){
+                rsnarr.push('youtube');
+            }
+            if(five.checked==true){
+                rsnarr.push('others');
+            }
+            var rsnstr;
+            if(rsnarr.length>0){
+                rsnstr=rsnarr.join(', ');
+            }
+            
+            var hii=document.getElementById('hii');
+
+            hii.value=rsnstr;
+        }
         const t=document.querySelector(".rubber");
         const text=t.textContent;
         const letters=text.split("");
@@ -152,6 +186,20 @@
         $(document).ready(function(){
             $('[data-toggle="tooltip"]').tooltip();   
         });
+
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwJma0PDQ855ERUqzzt7rB94h5eBd80RI4qG6yS3kZhxpWo4o9e/exec'
+        const form = document.forms['myform']
+        
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            var hii2=document.getElementById('hii2');
+            var date=new Date();
+            hii2.value=date;
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => alert("Your message has been saved successfully, thank you"))
+            .catch(error => console.error('Error!', error.message))
+        })
+
     </script>
     
 </body>
